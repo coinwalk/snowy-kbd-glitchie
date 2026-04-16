@@ -1,0 +1,19 @@
+[Unit]
+Description=System-wide Keyboard Glitch Service
+After=network.target
+
+[Service]
+Type=simple
+# Replace 'yourusername' with your actual Arch username
+User=root
+Group=input
+ExecStart=/usr/bin/python3 /etc/glitch_keys.py
+Restart=always
+
+# Environment variables are critical for root to access your UI
+Environment=DISPLAY=:0
+Environment=XAUTHORITY=/home/snowy/.Xauthority
+Environment=PYTHONUNBUFFERED=1
+
+[Install]
+WantedBy=multi-user.target
