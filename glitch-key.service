@@ -8,7 +8,7 @@ Type=simple
 # Replace '/path/to/your/script' with your actual Arch path
 User=root
 Group=input
-ExecStart=/usr/bin/python3 /path/to/your/script/glitch_keys.py
+ExecStart=/usr/bin/python3 /path/to/your/script/glitchy.py
 Restart=always
 
 # Environment variables are critical for root to access your UI
